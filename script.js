@@ -107,7 +107,7 @@ function fetchBookmarks() {
             {
                 name: 'DESIGN',
                 url: 'https://www.google.com',
-                color: '#ffff'
+                color: '#84fb23'
             }
         ];
         localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
