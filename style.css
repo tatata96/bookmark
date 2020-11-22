@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+:root {
+  --primary-color: #f7f5fa;
+  /*background*/
+  --border-radius: 50px;
+  --text-color: #f7f7f7;
+  --text2--color: #ec8106;
+}
+
+[data-theme="dark"] {
+  --primary-color: #110d16;
+  --text-color: rgb(11, 17, 1);
+  --text2--color: rgb(179, 252, 63);
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+  min-height: 100vh;
+  background-color: var(--primary-color);
+}
+
+h1 {
+  color: var(--text-color);
+  padding: 20px;
+  background-color: var(--text2--color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  text-transform: uppercase;
+  width: 275px;
+  margin: 20px auto 10px;
+  user-select: none;
+}
+
+h1:hover {
+  filter: brightness(80%);
+}
+
+/*THEME SWITCH*/
+
+/* Dark Mode Toggle */
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  position: fixed;
+  right: 58px;
+  bottom: 30px;
+}
+
+.theme-switch-wrapper span {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.toggle-text {
+  position: relative;
+  top: -4px;
+  right: 5px;
+  color: var(--text2--color);
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: var(--text2--color);
+  bottom: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  transition: 0.4s;
+  width: 4em;
+}
+
+.slider::before {
+  background: var(--primary-color);
+  bottom: 3px;
+  content: "";
+  height: 24px;
+  left: 8px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked+.slider {
+  color: var(--text2--color);
+}
+
+input:checked+.slider::before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
+.fas {
+  font-size: 30px;
+  margin-right: 5px;
+  color: var(--text2--color);
+}
+
+.closeIcon {
+  color: var(--text-color);
+}
+
+/*BOOKMARKS*/
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin: 10px;
+}
+
+.item:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+a {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+a:link, a:visited {
+  color: var(--text-color);
+  text-decoration: none;
+  ;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+}
+
+.fa-times {
+  float: right;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.name {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.name img {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  vertical-align: sub;
+}
+
+/*MODAL*/
+
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.show-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  max-width: 95%;
+  width: 500px;
+  animation: modalopen 1s;
+}
+
+.close-icon {
+  float: right;
+  color: var(--text-color);
+  font-size: 24px;
+  position: relative;
+  top: 13px;
+  right: 13px;
+  cursor: pointer;
+}
+
+.modal-header {
+  background-color: var(--text2--color);
+  color: var(--text-color);
+  padding: 15px;
+}
+
+h3 {
+  margin: 0;
+}
+
+.modal-content {
+  padding: 20px;
+  background-color: whitesmoke;
+}
+
+.form-group {
+  height: 55px;
+}
+
+.form-input {
+  width: 97%;
+  padding: 5px;
+  border: 1px solid silver;
+  border-radius: var(--border-radius);
+  display: block;
+  outline: none;
+}
+
+.form-label {
+  color: var(--text2--color);
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  color: var(--text-color);
+  background: var(--text2--color);
+  height: 30px;
+  width: 100px;
+  border: none;
+  border-radius: var(--border-radius);
+  margin-top: 10px;
+}
+
+button:hover {
+  filter: brightness(110%);
+}
+
+button:focus {
+  outline: none;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*vartical large small smartphone*/
+
+@media screen and (max-width:600px) {
+  .container {
+    flex-direction: column;
+  }
+}

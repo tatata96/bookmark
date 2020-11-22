@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOKMARKS</title>
+
+    <link rel="icon" type="image/png" href="bookmarkicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- Script -->
+    <h1 id="show-modal"> ADD BOOKMARK </h1>
+    <div class="theme-switch-wrapper">
+        <span id="toggle-icon">
+            <span class="toggle-text">Light Mode</span>
+            <i class="fas fa-sun"></i>
+        </span>
+        <label clas="theme-switch">
+            <input type="checkbox">
+            <div class="slider round"></div>
+        </label>
+    </div>
+
+    <div class="container" id="bookmarks-container">
+
+    </div>
+    </div>
+
+    <div class="modal-container" id="modal">
+        <div class="modal">
+            <i class="fas fa-times close-icon" id="close-modal"> </i>
+
+            <div class="modal-header">
+                <h3>ADD BOOKMARK</h3>
+            </div>
+
+            <div class="modal-content">
+                <form id="bookmark-form">
+
+                    <div class="form-group">
+                        <label for="website-name" class="form-label">Website Name</label>
+                        <input type="text" class="form-input" id="website-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="website-url" class="form-label">Website URL</label>
+                        <input type="text" class="form-input" id="website-url">
+                    </div>
+                    <div class="form-group">
+                        <label for="website-color" class="form-label">Website Color</label>
+                        <input type="color" class="form-input" id="website-color">
+                    </div>
+                    <button type="submit">SAVE</button>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
